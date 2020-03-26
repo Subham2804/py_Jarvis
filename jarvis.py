@@ -8,7 +8,7 @@ import smtplib
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-# print(voices[1].id)
+print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
 
@@ -45,7 +45,7 @@ def takeCommand():
         print(f"User said: {query}\n")
 
     except Exception as e:
-        # print(e)    
+        print(e)    
         print("Say that again please...")  
         return "None"
     return query
@@ -61,8 +61,8 @@ def sendEmail(to, content):
 if __name__ == "__main__":
     wishMe()
     while True:
-    # if 1:
-        query = takeCommand().lower()
+     if 1:
+        query = takeCommand().lower() # All commands are converted to lower cases
 
         # Logic for executing tasks based on query
         if 'wikipedia' in query:
@@ -80,7 +80,10 @@ if __name__ == "__main__":
             webbrowser.open("google.com")
 
         elif 'open stackoverflow' in query:
-            webbrowser.open("stackoverflow.com")   
+            webbrowser.open("stackoverflow.com") 
+	
+	elif 'open college website' in query:
+            webbrrowser.open("iiitkalyani.ac.in")		  
 
 
         elif 'play music' in query:
@@ -94,7 +97,7 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         elif 'open code' in query:
-            codePath = "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            codePath = "C:\\Users\\Subham\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
 
         elif 'email to Subham' in query:
